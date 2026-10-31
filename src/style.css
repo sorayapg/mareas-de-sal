@@ -22,3 +22,44 @@ body {
 h1 {
   color: #173b4d;
 }
+
+
+/* =========================================
+   TARJETAS DE LOS INTEGRANTES
+   ========================================= */
+
+/* Aplicamos una transición suave a las tarjetas */
+.integrantes .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Elevamos la tarjeta al pasar el ratón */
+.integrantes .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(23, 59, 77, 0.18) !important;
+}
+
+/* Respetamos a quienes prefieren reducir las animaciones */
+@media (prefers-reduced-motion: reduce) {
+  .integrantes .card {
+    transition: none;
+  }
+
+  .integrantes .card:hover {
+    transform: none;
+  }
+}
+
+
+/* =========================================
+   FOTOGRAFÍAS DE LOS INTEGRANTES
+   ========================================= */
+
+/* Mantenemos todas las fotografías con la misma proporción */
+.integrantes .card-img-top {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+}
+
