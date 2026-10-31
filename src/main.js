@@ -14,6 +14,10 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 // Importamos nuestros estilos personalizados
 import './style.css'
 
+ // Importamos los iconos de Bootstrap
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
+
 // Importamos las fotografías de los integrantes
 import fotoAdrian from './assets/adrian-suarez.png'
 import fotoLucia from './assets/lucia-fernandez.png'
@@ -28,6 +32,19 @@ import portadaDondeRompeElMar from './assets/DondeRompeElMar.png'
 
 // Importamos la portada del tercer álbum de Mareas de Sal
 import portadaDespuesDeLaTormenta from './assets/DespuesDeLaTormenta.png'
+
+/*
+ * ==========================================
+ * CANCIONES DE MAREAS DE SAL
+ * ==========================================
+ * Importamos los archivos MP3 para que Vite
+ * gestione correctamente sus rutas.
+ */
+
+import audioOrillas from './assets/Orillas.mp3';
+import audioDondeRompe from './assets/Donde rompe el mar.mp3';
+import audioDespuesTormenta from './assets/Después de la tormenta.mp3';
+
 
 // Seleccionamos el contenedor principal de nuestra página
 const app = document.querySelector('#app')
@@ -327,7 +344,46 @@ app.innerHTML = `
                 hablan de raíces, despedidas
                 y nuevos horizontes.
               </p>
+              
+              <!-- Reproductor de audio del EP Orillas -->
+              <div class="mt-3 mb-3">
+                <p class="fw-semibold mb-2">
+                  🎵 Escucha Orillas
+                </p>
 
+                <audio
+                  controls
+                  preload="none"
+                  class="w-100"
+                  aria-label="Escuchar la canción Orillas de Mareas de Sal"
+                >
+                  <source src="${audioOrillas}" type="audio/mpeg" />
+                  Tu navegador no admite la reproducción de audio.
+                </audio>
+              </div>
+
+              
+              <!-- Botón para mostrar u ocultar las canciones del EP Orillas -->
+              <button
+                class="btn btn-outline-primary mt-3"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#cancionesOrillas"
+                aria-expanded="false"
+                aria-controls="cancionesOrillas"
+              >
+                Ver canciones
+              </button>
+
+              <!-- Lista desplegable de canciones del EP Orillas -->
+              <div class="collapse mt-3" id="cancionesOrillas">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">1. Orillas</li>
+                  <li class="list-group-item">2. Sal en la piel</li>
+                  <li class="list-group-item">3. Volver al norte</li>
+                  <li class="list-group-item">4. Mareas</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -363,7 +419,47 @@ app.innerHTML = `
                 El sonido de Mareas de Sal crece sin perder
                 sus raíces junto al Cantábrico.
               </p>
+              
+              <!-- Reproductor de audio del álbum Donde rompe el mar -->
+              <div class="mt-3 mb-3">
+                <p class="fw-semibold mb-2">
+                  🎵 Escucha Donde rompe el mar
+                </p>
 
+                <audio
+                  controls
+                  preload="none"
+                  class="w-100"
+                  aria-label="Escuchar Donde rompe el mar de Mareas de Sal"
+                >
+                  <source src="${audioDondeRompe}" type="audio/mpeg" />
+                  Tu navegador no admite la reproducción de audio.
+                </audio>
+              </div>
+
+              
+              <!-- Botón para desplegar las canciones del álbum -->
+              <button
+                class="btn btn-outline-primary mt-3"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#cancionesDondeRompeElMar"
+                aria-expanded="false"
+                aria-controls="cancionesDondeRompeElMar"
+              >
+                Ver canciones
+              </button>
+
+              <!-- Lista desplegable de canciones del álbum -->
+              <div class="collapse mt-3" id="cancionesDondeRompeElMar">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">1. Donde rompe el mar</li>
+                  <li class="list-group-item">2. A contracorriente</li>
+                  <li class="list-group-item">3. Faros encendidos</li>
+                  <li class="list-group-item">4. Lo que dejamos atrás</li>
+                  <li class="list-group-item">5. La última marea</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -398,21 +494,623 @@ app.innerHTML = `
                 la calma después del ruido y descubrir
                 que siempre hay un horizonte al que regresar.
               </p>
+              
+              <!-- Reproductor de audio del álbum Después de la tormenta -->
+              <div class="mt-3 mb-3">
+                <p class="fw-semibold mb-2">
+                  🎵 Escucha Después de la tormenta
+                </p>
 
+                <audio
+                  controls
+                  preload="none"
+                  class="w-100"
+                  aria-label="Escuchar Después de la tormenta de Mareas de Sal"
+                >
+                  <source src="${audioDespuesTormenta}" type="audio/mpeg" />
+                  Tu navegador no admite la reproducción de audio.
+                </audio>
+              </div>
+
+                
+              <!-- Botón para desplegar las canciones del tercer álbum -->
+              <button
+                class="btn btn-outline-primary mt-3"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#cancionesDespuesTormenta"
+                aria-expanded="false"
+                aria-controls="cancionesDespuesTormenta"
+              >
+                Ver canciones
+              </button>
+
+              <!-- Lista desplegable de canciones del álbum -->
+              <div class="collapse mt-3" id="cancionesDespuesTormenta">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">1. Después de la tormenta</li>
+                  <li class="list-group-item">2. Volver a empezar</li>
+                  <li class="list-group-item">3. La luz del faro</li>
+                  <li class="list-group-item">4. Todo lo que somos</li>
+                  <li class="list-group-item">5. Un horizonte al que regresar</li>
+                </ul>
+              </div>
             </div>
+          </div>
+        </div>
+        <!-- Fin de la tarjeta Después de la tormenta -->
+      </div>
+      <!-- Fin de la fila de discos -->
+    </section>
+    <!-- Fin de la sección Discografía -->
+    
+    <!-- =========================================
+        SECCIÓN: GIRA
+        ========================================= -->
+    <section id="gira" class="py-5">
+
+      <!-- Título de la sección -->
+      <h2 class="fw-bold mb-4">Próximos conciertos</h2>
+
+      <!-- Presentación de la gira -->
+      <p class="lead mx-auto">
+        La música cobra vida cuando la compartimos.
+        Descubre dónde sonarán nuestras próximas canciones
+        y acompáñanos en el camino.
+      </p>
+      
+      
+  <!-- =========================================
+      TABLA DE PRÓXIMOS CONCIERTOS
+      ========================================= -->
+
+  <!-- Contenedor responsive de la gira -->
+  <div class="row justify-content-center mt-5">
+
+    <div class="col-12 col-lg-10">
+
+      <!-- Permite desplazar la tabla horizontalmente en móviles -->
+      <div class="table-responsive shadow-sm rounded">
+
+        <!-- Tabla Bootstrap con filas alternas y efecto hover -->
+        <table class="table table-striped table-hover align-middle mb-0">
+
+          <!-- Cabecera de la tabla -->
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Fecha</th>
+              <th scope="col">Ciudad</th>
+              <th scope="col">Sala</th>
+              <th scope="col">Entradas</th>
+            </tr>
+          </thead>
+
+          <!-- Cuerpo de la tabla -->
+          <tbody>
+
+            <!-- Concierto 1: Luanco -->
+            <tr>
+              <td>14 NOV 2026</td>
+              <td>Luanco, Asturias</td>
+              <td>Teatro Riera</td>
+              <td>
+                <span class="badge text-bg-danger">
+                  Agotado
+                </span>
+              </td>
+            </tr>
+
+            <!-- Concierto 2: Gijón -->
+            <tr>
+              <td>28 NOV 2026</td>
+              <td>Gijón, Asturias</td>
+              <td>Sala Acapulco</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm">
+                  Comprar
+                </button>
+              </td>
+            </tr>
+
+            <!-- Concierto 3: Oviedo -->
+            <tr>
+              <td>12 DIC 2026</td>
+              <td>Oviedo, Asturias</td>
+              <td>Sala Gong</td>
+              <td>
+                <button type="button" class="btn btn-outline-primary btn-sm">
+                  Comprar
+                </button>
+              </td>
+            </tr>
+
+            <!-- Concierto 4: Avilés -->
+            <tr>
+              <td>19 DIC 2026</td>
+              <td>Avilés, Asturias</td>
+              <td>Factoría Cultural</td>
+              <td>
+                <span class="badge text-bg-warning">
+                  Últimas entradas
+                </span>
+              </td>
+            </tr>
+
+            <!-- Concierto 5: Santander -->
+            <tr>
+              <td>16 ENE 2027</td>
+              <td>Santander, Cantabria</td>
+              <td>Escenario ficticio de Santander</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-sm">
+                  Comprar
+                </button>
+              </td>
+            </tr>
+
+            <!-- Concierto 6: Bilbao -->
+            <tr>
+              <td>30 ENE 2027</td>
+              <td>Bilbao, Bizkaia</td>
+              <td>Escenario ficticio de Bilbao</td>
+              <td>
+                <span class="badge text-bg-secondary">
+                  Próximamente
+                </span>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+        <!-- Fin de la tabla de conciertos -->
+
+      </div>
+      <!-- Fin del contenedor table-responsive -->
+
+    <!-- Paginación visual de Bootstrap -->
+    <!-- El enunciado no exige funcionalidad real -->
+    <nav class="mt-4" aria-label="Paginación de conciertos">
+
+      <ul class="pagination justify-content-center">
+
+        <li class="page-item disabled">
+          <span class="page-link">Anterior</span>
+        </li>
+
+        <li class="page-item active" aria-current="page">
+          <span class="page-link">1</span>
+        </li>
+
+        <li class="page-item">
+          <span class="page-link">2</span>
+        </li>
+
+        <li class="page-item">
+          <span class="page-link">Siguiente</span>
+        </li>
+
+      </ul>
+
+    </nav>
+    <!-- Fin de la paginación -->
+
+  </div>
+
+</div>
+<!-- Fin del contenedor de la gira -->
+
+
+    </section>
+    <!-- Fin de la sección Gira -->
+  
+    <!-- =========================================
+        SECCIÓN: CONTACTO
+        ========================================= -->
+    <section id="contacto" class="py-5">
+
+      <!-- Título de la sección -->
+      <h2 class="fw-bold mb-4">Contacto</h2>
+
+      <!-- Presentación del apartado -->
+      <p class="lead mx-auto">
+        ¿Quieres ponerte en contacto con Mareas de Sal?
+        Estamos encantados de escuchar tus propuestas,
+        preguntas o simplemente saber de ti.
+      </p>
+      
+      <!-- Botón que abrirá la ventana modal de contacto -->
+      <!-- Bootstrap gestiona la apertura mediante sus atributos data-bs-* -->
+      <div class="text-center mt-4 mb-4">
+
+        <button
+          type="button"
+          class="btn btn-primary btn-lg"
+          data-bs-toggle="modal"
+          data-bs-target="#modalContacto"
+        >
+          Contactar con Mareas de Sal
+        </button>
+
+      </div>
+      <!-- Fin del botón de contacto -->
+
+  </div>
+
+</div>
+<!-- Fin del contenedor del formulario -->
+
+    </section>
+    <!-- Fin de la sección Contacto -->
+    
+    <!-- =========================================
+        VENTANA MODAL DE CONTACTO
+        ========================================= -->
+    <div
+      class="modal fade"
+      id="modalContacto"
+      tabindex="-1"
+      aria-labelledby="tituloModalContacto"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+
+        <div class="modal-content">
+
+          <!-- Cabecera de la ventana modal -->
+          <div class="modal-header">
+
+            <h2 class="modal-title fs-5" id="tituloModalContacto">
+              Contactar con Mareas de Sal
+            </h2>
+
+            <!-- Botón X para cerrar la ventana -->
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+
+          </div>
+
+          <!-- Contenido de la ventana modal -->
+          <div class="modal-body">
+            <p>
+              ¿Tienes alguna pregunta o propuesta?
+              ¡Nos encantará escucharte!
+            </p>
+
+            <!-- Contenedor responsive del formulario de contacto -->
+  <div class="row justify-content-center mt-5">
+
+  <div class="col-12 col-md-10 col-lg-8">
+
+    <!-- Formulario de contacto de Mareas de Sal -->
+    
+      <!-- Formulario preparado para la validación personalizada de Bootstrap -->
+      <form
+        id="formularioContacto"
+        class="text-start needs-validation"
+        novalidate
+      >
+
+
+      <!-- Campo: Nombre -->
+      <div class="mb-3">
+        <label for="nombreContacto" class="form-label fw-bold">
+          Nombre
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombreContacto"
+          name="nombre"
+          placeholder="Escribe tu nombre"
+          autocomplete="name"
+          required
+        />
+        
+        <!-- Mensaje de error cuando no se introduce el nombre -->
+        <div class="invalid-feedback">
+          Por favor, introduce tu nombre.
+        </div>
+
+      </div>
+
+      <!-- Campo: Correo electrónico -->
+      <div class="mb-3">
+        <label for="emailContacto" class="form-label fw-bold">
+          Correo electrónico
+        </label>
+        <input
+          type="email"
+          class="form-control"
+          id="emailContacto"
+          name="email"
+          placeholder="nombre@ejemplo.com"
+          autocomplete="email"
+          required
+        />
+        
+        <!-- Mensaje de error si el correo está vacío o no es válido -->
+        <div class="invalid-feedback">
+          Introduce una dirección de correo electrónico válida.
+        </div>
+
+      </div>
+      
+      <!-- Campo: Motivo de contacto -->
+      <!-- Permite seleccionar el tipo de consulta mediante Bootstrap -->
+      <div class="mb-3">
+
+        <label for="motivoContacto" class="form-label fw-bold">
+          Motivo de contacto
+        </label>
+
+        <select
+          class="form-select"
+          id="motivoContacto"
+          name="motivo"
+          required
+        >
+          <option value="" selected disabled>
+            Selecciona un motivo
+          </option>
+
+          <option value="prensa">Prensa y entrevistas</option>
+          <option value="contratacion">Contratación de conciertos</option>
+          <option value="fans">Mensaje de un fan</option>
+          <option value="otros">Otros asuntos</option>
+        </select>
+        
+        <!-- Mensaje de error si no se selecciona un motivo -->
+        <div class="invalid-feedback">
+          Por favor, selecciona un motivo de contacto.
+        </div>
+
+
+      </div>
+      <!-- Fin del campo Motivo de contacto -->
+
+      <!-- Campo: Asunto -->
+      <div class="mb-3">
+        <label for="asuntoContacto" class="form-label fw-bold">
+          Asunto
+        </label>
+        <input
+          type="text"
+          class="form-control"
+          id="asuntoContacto"
+          name="asunto"
+          placeholder="¿Sobre qué quieres escribirnos?"
+          required
+        />
+        
+        <!-- Mensaje de error si el asunto está vacío -->
+        <div class="invalid-feedback">
+          Por favor, indica el asunto de tu mensaje.
+        </div>
+
+      </div>
+
+      <!-- Campo: Mensaje -->
+      <div class="mb-4">
+        <label for="mensajeContacto" class="form-label fw-bold">
+          Mensaje
+        </label>
+        <textarea
+          class="form-control"
+          id="mensajeContacto"
+          name="mensaje"
+          rows="5"
+          placeholder="Cuéntanos qué tienes en mente..."
+          required
+        ></textarea>
+        
+        <!-- Mensaje de error si no se escribe ningún mensaje -->
+        <div class="invalid-feedback">
+          Por favor, escribe tu mensaje antes de enviarlo.
+        </div>
+
+      </div>
+      
+      <!-- Casilla de aceptación de privacidad -->
+      <!-- El usuario debe aceptar antes de enviar el formulario -->
+      <div class="form-check mb-4 text-start">
+
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="privacidadContacto"
+          name="privacidad"
+          required
+        />
+
+        <label
+          class="form-check-label"
+          for="privacidadContacto"
+        >
+          He leído y acepto la política de privacidad.
+        </label>
+        
+        <!-- Mensaje de error si no se acepta la privacidad -->
+        <div class="invalid-feedback">
+          Debes aceptar la política de privacidad para continuar.
+        </div>
+
+      </div>
+      <!-- Fin de la casilla de privacidad -->
+
+
+      <!-- Botón para enviar el formulario -->
+      <div class="text-center">
+        <button type="submit" class="btn btn-dark px-5">
+          Enviar mensaje
+        </button>
+      </div>
+
+    </form>
+    <!-- Fin del formulario de contacto -->
+
+          </div>
+
+          <!-- Pie de la ventana modal -->
+          <div class="modal-footer">
+
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
 
           </div>
 
         </div>
-        <!-- Fin de la tarjeta Después de la tormenta -->
-
 
       </div>
-      <!-- Fin de la fila de discos -->
+    </div>
+    <!-- Fin de la ventana modal de contacto -->
 
-    </section>
-    <!-- Fin de la sección Discografía -->
 
   </main>
   <!-- Fin del contenido principal -->
+  
+  <!-- ==========================================
+      PIE DE PÁGINA - MAREAS DE SAL
+      ========================================== -->
+  <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+
+      <!-- Nombre del grupo -->
+      <p class="fw-bold fs-5 mb-2">
+        Mareas de Sal
+      </p>
+
+      
+      <!-- Redes sociales de Mareas de Sal -->
+      <div class="d-flex justify-content-center gap-4 my-3">
+
+        <!-- Instagram -->
+        <a href="#"
+          class="text-white fs-4"
+          aria-label="Instagram de Mareas de Sal"
+          title="Instagram">
+          <i class="bi bi-instagram" aria-hidden="true"></i>
+        </a>
+
+        <!-- YouTube -->
+        <a href="#"
+          class="text-white fs-4"
+          aria-label="YouTube de Mareas de Sal"
+          title="YouTube">
+          <i class="bi bi-youtube" aria-hidden="true"></i>
+        </a>
+
+        <!-- Facebook -->
+        <a href="#"
+          class="text-white fs-4"
+          aria-label="Facebook de Mareas de Sal"
+          title="Facebook">
+          <i class="bi bi-facebook" aria-hidden="true"></i>
+        </a>
+
+    </div>
+  <!-- Fin de las redes sociales -->
+
+
+      <!-- Derechos de autor -->
+      <p class="small mb-2">
+        &copy; 2026 Mareas de Sal. Todos los derechos reservados.
+      </p>
+
+      <!-- Enlace al aviso legal -->
+      <a href="#aviso-legal" class="link-light small">
+        Aviso legal
+      </a>
+
+    </div>
+  </footer>
+  <!-- Fin del pie de página -->
+
 `
+
+
+/**
+ * =========================================
+ * VALIDACIÓN DEL FORMULARIO DE CONTACTO
+ * =========================================
+ *
+ * Utilizamos la validación de HTML5 junto con
+ * las clases de Bootstrap 5.3.
+ *
+ * IMPORTANTE:
+ * La apertura y el cierre de la ventana modal
+ * siguen gestionados por Bootstrap mediante
+ * los atributos data-bs-* del HTML.
+ */
+
+// Seleccionamos el formulario de contacto
+const formularioContacto = document.querySelector('#formularioContacto')
+
+// Comprobamos que el formulario existe
+if (formularioContacto) {
+
+  // Escuchamos el evento de envío
+  formularioContacto.addEventListener('submit', (event) => {
+
+    // Evitamos que la página se recargue
+    event.preventDefault()
+
+    // Activamos los estilos de validación de Bootstrap
+    formularioContacto.classList.add('was-validated')
+
+    // Comprobamos si todos los campos son válidos
+    if (!formularioContacto.checkValidity()) {
+
+      // Detenemos el envío si hay campos incorrectos
+      event.stopPropagation()
+      return
+    }
+
+    // El formulario es válido, pero aún no envía datos reales
+    console.log('Formulario validado correctamente (modo prueba)')
+
+  })
+
+}
+
+/*
+ * ==========================================
+ * CONTROL DE LOS REPRODUCTORES DE AUDIO
+ * ==========================================
+ * Cuando comienza una canción, pausamos las
+ * demás para evitar que suenen simultáneamente.
+ */
+
+// Seleccionamos todos los reproductores de audio.
+const reproductores = document.querySelectorAll('audio');
+
+// Recorremos cada reproductor.
+reproductores.forEach((reproductorActual) => {
+
+  // Detectamos cuándo comienza a reproducirse.
+  reproductorActual.addEventListener('play', () => {
+
+    // Recorremos nuevamente todos los reproductores.
+    reproductores.forEach((otroReproductor) => {
+
+      // Si no es el actual, lo pausamos.
+      if (otroReproductor !== reproductorActual) {
+        otroReproductor.pause();
+      }
+
+    });
+
+  });
+
+});
+
+
