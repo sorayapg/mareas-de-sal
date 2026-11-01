@@ -24,6 +24,18 @@ import fotoLucia from './assets/lucia-fernandez.png'
 import fotoNerea from './assets/nerea-alvarez.png'
 import fotoDiego from './assets/diego-menendez.png'
 
+// Importamos la fotografía conjunta para el carrusel
+import fotoGrupo from './assets/mareas-de-sal-grupo.png'
+
+// Importamos la fotografía del concierto en Muniello
+import fotoConcierto from './assets/mareas-de-sal-concierto.png'
+
+// Fotografía de la banda paseando por el puerto de Luanco
+import fotoLuanco from './assets/mareas-de-sal-luanco.png'
+
+// Importamos el logotipo oficial de Mareas de Sal
+import logoMareas from './assets/logo-mareas-de-sal.png'
+
 // Importamos la portada del primer EP de Mareas de Sal
 import portadaOrillas from './assets/Orillas.png'
 
@@ -108,9 +120,17 @@ app.innerHTML = `
   <main class="container py-5 text-center">
 
     <!-- Presentación de la banda -->
-    <h1 class="display-3 fw-bold">
-      Mareas de Sal
+    
+    <!-- Logotipo principal de Mareas de Sal -->
+    <h1 class="mb-4">
+      <img
+        src="${logoMareas}"
+        class="img-fluid"
+        alt="Mareas de Sal"
+        style="max-width: 600px; width: 100%;"
+      />
     </h1>
+
 
     <!-- Lema del grupo -->
     <p class="lead">
@@ -121,6 +141,140 @@ app.innerHTML = `
     <p>
       Indie rock y folk rock desde Luanco, Asturias.
     </p>
+    
+    <!-- =========================================
+        SECCIÓN: CARRUSEL DE MAREAS DE SAL
+        ========================================= -->
+
+    <!-- Carrusel principal de Mareas de Sal -->
+    <div id="carruselMareas" class="carousel slide my-5">
+      
+      <!-- Indicadores para navegar entre las tres diapositivas -->
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carruselMareas"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Diapositiva 1">
+        </button>
+
+        <button
+          type="button"
+          data-bs-target="#carruselMareas"
+          data-bs-slide-to="1"
+          aria-label="Diapositiva 2">
+        </button>
+
+        <button
+          type="button"
+          data-bs-target="#carruselMareas"
+          data-bs-slide-to="2"
+          aria-label="Diapositiva 3">
+        </button>
+      </div>
+      <!-- Fin de los indicadores -->
+
+
+      <!-- Contenedor de las diapositivas -->
+      <div class="carousel-inner">
+
+        <!-- DIAPOSITIVA 1: Presentación de Mareas de Sal -->
+        <div class="carousel-item active position-relative">
+
+          <!-- Fotografía del grupo -->
+          <img
+            src="${fotoGrupo}"
+            class="d-block w-100"
+            alt="Los cuatro integrantes de Mareas de Sal junto al mar Cantábrico"
+          />
+
+          <!-- Logotipo como marca de agua -->
+          <img
+            src="${logoMareas}"
+            class="position-absolute top-0 start-0 m-3"
+            alt=""
+            aria-hidden="true"
+            style="width: 22%; max-width: 180px; opacity: 0.65;"
+          />
+
+          <!-- Texto superpuesto, oculto en móviles -->
+          <div class="carousel-caption d-none d-md-block">
+            <h2>Mareas de Sal</h2>
+            <p>La música nace donde el mar encuentra la tierra.</p>
+          </div>
+
+        </div>
+        <!-- Fin de la primera diapositiva -->
+
+        <!-- DIAPOSITIVA 2: Mareas de Sal en concierto -->
+        <div class="carousel-item">
+
+          <!-- Fotografía del concierto en Muniello -->
+          <img
+            src="${fotoConcierto}"
+            class="d-block w-100"
+            alt="Mareas de Sal actuando en directo en Muniello, Asturias"
+          />
+
+          <!-- Texto superpuesto, oculto en móviles -->
+          <div class="carousel-caption d-none d-md-block">
+            <h2>En directo desde Muniello</h2>
+            <p>Cuatro músicos, un escenario y muchas historias que contar.</p>
+          </div>
+
+        </div>
+        <!-- Fin de la segunda diapositiva -->
+        
+          <!-- DIAPOSITIVA 3: Mareas de Sal en Luanco -->
+          <div class="carousel-item">
+
+            <!-- Fotografía del grupo paseando por el puerto -->
+            <img
+              src="${fotoLuanco}"
+              class="d-block w-100"
+              alt="Los cuatro integrantes de Mareas de Sal paseando por el puerto de Luanco, Asturias"
+            />
+
+            <!-- Texto superpuesto, oculto en móviles -->
+            <div class="carousel-caption d-none d-md-block">
+              <h2>Desde Luanco, Asturias</h2>
+              <p>Cuatro caminos, una misma marea.</p>
+            </div>
+
+          </div>
+          <!-- Fin de la tercera diapositiva -->
+
+
+      </div>
+      <!-- Fin del contenedor de diapositivas -->
+
+      <!-- Flecha para ir a la diapositiva anterior -->
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carruselMareas"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+
+      <!-- Flecha para ir a la diapositiva siguiente -->
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carruselMareas"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+
+    </div>
+    <!-- Fin del carrusel principal -->
+
 
     <!-- =========================================
          SECCIÓN: EL GRUPO
