@@ -24,6 +24,9 @@ import fotoLucia from './assets/lucia-fernandez.png'
 import fotoNerea from './assets/nerea-alvarez.png'
 import fotoDiego from './assets/diego-menendez.png'
 
+// Importamos la fotografía de la biografía
+import fotoBiografia from './assets/mareas-de-sal-biografia.png';
+
 // Importamos la fotografía conjunta para el carrusel
 import fotoGrupo from './assets/mareas-de-sal-grupo.png'
 
@@ -71,13 +74,13 @@ app.innerHTML = `
     <div class="container">
 
       <!-- Nombre de la banda -->
-      <a class="navbar-brand fw-bold" href="#">
+      <a class="navbar-brand fw-bold d-none d-lg-block" href="#">
         Mareas de Sal
       </a>
 
       <!-- Botón para desplegar el menú en móviles -->
       <button
-        class="navbar-toggler"
+        class="navbar-toggler d-lg-none"
         type="button"
         data-bs-toggle="collapse"
         data-bs-target="#menuPrincipal"
@@ -313,17 +316,32 @@ app.innerHTML = `
       <h2 class="fw-bold mb-4">El grupo</h2>
 
       <!-- Historia de la banda -->
-      <p class="lead mx-auto">
-        Mareas de Sal nació en Luanco, Asturias, entre guitarras,
-        conversaciones interminables y canciones que hablaban de
-        lo que a veces cuesta decir en voz alta.
-      </p>
+      <!-- Distribución responsive de la biografía -->
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-md-6">
+        <p class="lead mx-auto">
+          Mareas de Sal nació en Luanco, Asturias, entre guitarras,
+          conversaciones interminables y canciones que hablaban de
+          lo que a veces cuesta decir en voz alta.
+        </p>
 
-      <p class="mx-auto">
-        Una banda que mezcla la energía del indie rock con las
-        raíces del folk, inspirada por el Cantábrico y las historias
-        de quienes viven junto a él.
-      </p>
+        <p class="mx-auto">
+          Una banda que mezcla la energía del indie rock con las
+          raíces del folk, inspirada por el Cantábrico y las historias
+          de quienes viven junto a él.
+        </p>
+      </div>
+      <!-- Columna de la fotografía del grupo -->
+      <div class="col-12 col-md-6">
+        <img
+          src="${fotoBiografia}"
+          class="img-fluid rounded shadow-sm"
+          alt="Los cuatro integrantes de Mareas de Sal"
+        />
+      </div>
+
+      <!-- Cierre de la fila de la biografía -->
+      </div>
 
       <!-- Presentación de los integrantes -->
       <div class="integrantes mt-5">
