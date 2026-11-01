@@ -67,7 +67,7 @@ app.innerHTML = `
   <!-- =========================================
        BARRA DE NAVEGACIÓN
        ========================================= -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
     <div class="container">
 
       <!-- Nombre de la banda -->
@@ -94,7 +94,7 @@ app.innerHTML = `
 
           <li class="nav-item">
             <a class="nav-link" href="#grupo">El grupo</a>
-          </li>
+          </li>Contacto
 
           <li class="nav-item">
             <a class="nav-link" href="#discografia">Discografía</a>
@@ -108,7 +108,35 @@ app.innerHTML = `
             <a class="nav-link" href="#contacto">Contacto</a>
           </li>
 
-        </ul>
+       
+        
+        <!-- Menú desplegable de navegación -->
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="menuDesplegable"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Descubre más
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="menuDesplegable">
+            <li>
+              <a class="dropdown-item" href="#grupo">Conoce a la banda</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#discografia">Nuestra música</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#gira">Próximos conciertos</a>
+            </li>
+          </ul>
+        </li>
+        <!-- Fin del menú desplegable -->
+      </ul>
       </div>
 
     </div>
